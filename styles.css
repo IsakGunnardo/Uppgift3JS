@@ -1,3 +1,14 @@
 body{
-  background-color: beige;
+    font-size: 30px;
+}
+
+
+.strike{
+text-decoration: line-through 5px;
+}
+
+
+td{
+    border: 1px solid black;
+    padding: 5px;
 }

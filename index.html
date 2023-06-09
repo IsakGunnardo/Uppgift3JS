@@ -1,16 +1,36 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles.css">
-        <title>ToDo List</title>
-        <script src="https://kit.fontawesome.com/0f8eee4211.js" crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <input type="text">
-        <ul></ul>
-          
-        <script src="main.js"></script>
-    </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+<body>
+  <input type="text" placeholder="Enter new to-do">
+  <p><input type="text" placeholder="Enter category" list="categoryList"></p>
+  <datalist id="categoryList">
+    <option value="Personal"></option>
+    <option value="Work"></option>
+  </datalist>
+  <button id="addBtn">Add</button>
+  <ul></ul>
+  <table id="todoTable">
+    <tr>
+      <td>checkbox</td>
+      <td id="date">date</td>
+      
+      <td>to-do</td>
+      <td><select  id="categoryFilter">
+
+     
+
+      </select></td>
+      <td>delete</td>
+    </tr>
+  </table>
+  <script src="main.js"></script>
+</body>
 </html>
