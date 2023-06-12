@@ -58,17 +58,19 @@ function todoMain() {
 
         //skapar datum cell
         let dateElem = document.createElement("td");
-        let currentDate = new Date();
-        let day = currentDate.getDate();
-        let month = currentDate.getMonth();
-        let year = currentDate.getFullYear();
-        let datedisplay = month + '-' + day + '-' + year
-        dateElem.innerText = datedisplay;
+        let date = new Date().toJSON().slice(0,10);
+        dateElem.innerText = date;
         trElem.appendChild(dateElem)
-        console.log(currentDate)
-    
+        console.log(date)
+        let ndate = new Date().toJSON().slice(0,11);
+
+
+        checkboxElem.addEventListener("click", ()=>{
+          dateElem.innerHTML = ndate
+        })
         if(checkboxElem == dateElem){
-          dateElem.innerText = datedisplay;
+          dateElem.innerText = ndate;
+          console.log(ndate)
         }
     // to-do cell
     let tdElem2 = document.createElement("td");
