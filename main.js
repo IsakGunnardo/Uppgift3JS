@@ -84,7 +84,7 @@ function toDoMain() {
             if(checkbox.checked){
                 title.classList.toggle("checked");
                 categorytxt.classList.toggle("checked");
-
+              liElem.classList.toggle("checkedcolor")
                 timeStamp.innerHTML = "<strong>Uppgift slutförd:</strong> <br>" + dateTime()
                 bool !== true
                 title.innerText = "Färdig:  " + inputValue
@@ -93,6 +93,8 @@ function toDoMain() {
             }else{
                 title.classList.toggle("checked");
                 categorytxt.classList.toggle("checked");
+              liElem.classList.toggle("checkedcolor")
+
         timeStamp.innerHTML = "<strong>Uppgift skapad:</strong> <br> " + dateTime();
                 bool == true
                 title.innerText = inputValue
