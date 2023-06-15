@@ -1,14 +1,222 @@
-body{
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background: whitesmoke;
+
+    background-repeat: repeat;
+    background-size: cover;
+
+    height: 100vh fit-content;
+
+}
+
+.header {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    display: grid;
+    grid-template-columns: 2, 1, 1, 1, 2;
+    grid-template-rows: 1, 1;
+    background: linear-gradient(red, orange, yellow);
+    width: 100%;
+    height: 100px;
+    justify-content: center;
+    justify-content: space-evenly;
+    gap: 10px;
+
+}
+
+.label {
     font-size: 30px;
+    text-align: center;
+    font-family: Marker Felt, fantasy;
+}
+
+.col1 {
+
+    display: grid;
+    grid-row-start: 1;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    justify-content: center;
+}
+
+.col2 {
+
+    display: grid;
+    grid-row-start: 1;
+    grid-column-start: 3;
+    grid-column-end: 5;
+    justify-content: center;
+
+
+}
+
+.col3 {
+    display: grid;
+    margin-left: 10px;
+    margin-top: 20px;
+    grid-row-start: 1;
+    grid-column-start: 5;
+    grid-column-end: 5;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.input {
+    width: 15rem;
+    height: 3rem;
+    margin: 10px;
+    border-radius: 20px;
+    text-align: center;
+}
+.input:hover{
+    background-color: whitesmoke;
 }
 
 
-.strike{
-text-decoration: line-through 5px;
+#addBtn {
+    border-radius: 100px;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0px 0px 5px 2px ;
 }
 
+.container {
 
-td{
+    display: grid;
+    grid-template-columns: 1fr, 5fr, 5fr, 1fr;
+    padding: 5%;
+
+    /* box-shadow: 1px 1px 10px 10px white; */
+    height: auto;
+    align-items: self-start;
+    justify-content: center;
+    text-align: center;
+    min-height: 600px;
+
+}
+
+h2 {
+    margin: 10px;
+    text-align: center;
+
+    border: 1px solid black ;
+
+    height: 35px;
+}
+
+.maincol1 {
+    background-color: whitesmoke;
+    display: grid;
+    width: 500px;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    align-items: start;
+
+    text-align: center;
+
+
+
+
+}
+
+.maincol2 {
+    background-color: whitesmoke;
+
+    display: grid;
+    width: 500px;
+    grid-column-start: 6;
+    grid-column-end: 10;
+    align-items: start;
+    text-align: center;
+
+
+
+
+}
+
+#todoUL {
+    padding: 5%;
+
+
+
+
+}
+
+#done {
+
+    padding: 5%;
+
+
+}
+
+.liElem {
+    font-size: 25px;
+    border-radius: 10px;
+    background-color: wheat;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
     border: 1px solid black;
-    padding: 5px;
+    width: fit-content auto;
+    justify-content: space-between;
+    padding: 3px;
 }
+
+.title {
+    font-weight: 900;
+}
+
+.description {
+    font-weight: 200;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+.checked {
+
+    text-decoration: line-through 3px black;
+}
+
+.timeStamp {
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+
+}
+.delete:hover{
+    background-color: red;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .header{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: auto;
+
+    }
+
+    .container{
+        margin-top: 80px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+}
+  

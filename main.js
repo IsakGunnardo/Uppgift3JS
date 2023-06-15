@@ -1,184 +1,136 @@
-onload = todoMain;
-
-function todoMain() {
-  const DEFAULT_OPTION = "Välj en kategori";
-  let inputElem,
-    inputElem2,
-    button,
-    selectElem;
+//
+toDoMain();
 
 
+/// använda BOOL för att checka av o an /////
+function toDoMain() {
+    let inputElem,
+        category,
+        addbtn,
+        ulElem,
+        ulDone,
+        bool;
+    getElements();
+    getListeners();
 
 
-  getElements();
-  addListeners();
+    function getElements() {
 
+        inputElem = document.getElementById("input");
+        category = document.getElementById("category");
+        addbtn = document.getElementById("addBtn");
+        ulDo = document.getElementsByTagName("ul")[0];
+        ulDone = document.getElementsByTagName("ul")[1];
 
-
-  function getElements() {
-    inputElem = document.getElementsByTagName("input")[0];//Kopplar inputen du skriver din to-do i
-    inputElem2 = document.getElementsByTagName("input")[1]; // kopplar inputen du skriver kategori i 
-    button = document.getElementById("addBtn"); // kopplar knappen till inputsen
-    selectElem = document.getElementById("categoryFilter") //kategori filter där man kan välja kategori
-    dateElem = document.getElementById("time");
-  }
-
-  function addListeners() {
-    button.addEventListener("click", addEntry, false);//gör så att button lägger till innehållet i inputsen
-    selectElem.addEventListener("change", filterEntries)//gör så att select knappen går att ändra kategori
-  }
-
-  function addEntry(event) {
-
-    let inputValue = inputElem.value;//kopplar input för todo värdet
-    inputElem.value = "";
-
-    let inputValue2 = inputElem2.value;//kopplar input för kategori värdet
-    inputElem2.value = "";
-
-    // lägger till en ny rad
-
-    let table = document.getElementById("todoTable");
-
-    let trElem = document.createElement("tr");
-    table.appendChild(trElem);
-
-
-
-
-
-    // skapar checkbox cellen
-    let checkboxElem = document.createElement("input");
-    checkboxElem.type = "checkbox";
-    checkboxElem.addEventListener("click", done);
-    let tdElem1 = document.createElement("td");
-    tdElem1.appendChild(checkboxElem);
-    trElem.appendChild(tdElem1);
-
-
-        //skapar datum cell
-        let dateElem = document.createElement("td");
-        let date = new Date().toJSON().slice(0,10);
-        dateElem.innerText = date;
-        trElem.appendChild(dateElem)
-        console.log(date)
-        let ndate = new Date().toJSON().slice(0,11);
-
-
-        checkboxElem.addEventListener("click", ()=>{
-          dateElem.innerHTML = ndate
-        })
-        if(checkboxElem == dateElem){
-          dateElem.innerText = ndate;
-          console.log(ndate)
-        }
-    // to-do cell
-    let tdElem2 = document.createElement("td");
-    tdElem2.innerText = inputValue;
-    trElem.appendChild(tdElem2);
-
-    // kategori cell
-    let tdElem3 = document.createElement("td");
-    tdElem3.innerText = inputValue2;
-    trElem.appendChild(tdElem3);
-
-    // "remove" cell
-    let spanElem = document.createElement("span");
-    spanElem.innerText = "delete";
-    spanElem.className = "material-icons";
-    spanElem.addEventListener("click", deleteItem, false);
-    let tdElem4 = document.createElement("td");
-    tdElem4.appendChild(spanElem);
-    trElem.appendChild(tdElem4);
-
-      updateSelectOptions();
-
-    function deleteItem() {
-      trElem.remove();
-      updateSelectOptions();
 
     }
 
-    function done() {
-      trElem.classList.toggle("strike");
+    function getListeners() {
+        addbtn.addEventListener("click", onChange, false);
+  
     }
 
-  }
+    function onChange(event) {
+        let inputValue = inputElem.value;
 
-  function filterEntries() {
 
-    let rows = document.getElementsByTagName("tr");
+        let inputValue2 = category.value
 
-    let selection = selectElem.value;
-    if (selection == DEFAULT_OPTION) {
-      let rows = document.getElementsByTagName("tr");
 
-      Array.from(rows).forEach((row, index) => {
-        row.style.display = "";
 
-      });
-    } else {
-      Array.from(rows).forEach((row, index) => {
-        if (index == 0) {
-          return;
+        bool == true
+        
+        //// skapar List element ////
+
+
+        let liElem = document.createElement("li");
+        liElem.classList.add("liElem")
+        ulDo.appendChild(liElem);
+        
+        if(inputValue === "" || inputValue2 === ""){
+            
+            liElem.style.display ="none"
+            alert("Du måste skriva något")
         }
-        let category = row.getElementsByTagName("td")[2].innerText;
-        if (category == selectElem.value) {
-          row.style.display = "";
-        } else {
-          row.style.display = "none";
-        }
-      });
-    }
-
-
-
-  }
-
-
-    function updateSelectOptions(){
-
-      let options = [];
-    let rows = document.getElementsByTagName("tr");
-    Array.from(rows).forEach((row, index) => {
-      if (index == 0) {
-        return;
-      }
-      let category = row.getElementsByTagName("td")[2].innerText;
-
-      //if(!option.includes(category)){
-        options.push(category)
-
-
-      //}
-    });
-
-    let optionsSet = new Set(options);
-
-
-      //empty the select options
-      selectElem.innerHTML = "";
-
-      let newOptionElem = document.createElement("option");
-      newOptionElem.value = DEFAULT_OPTION;
-      newOptionElem.innerText = DEFAULT_OPTION;
-      selectElem.appendChild(newOptionElem);
-
-      for(let option of optionsSet){
-        let newOptionElem = document.createElement("option");
-        newOptionElem.value = option;
-        newOptionElem.innerText = option;
-        selectElem.appendChild(newOptionElem);
-      };
-      }
-
-
-       
+        
+     
+/// lägger till en checkbox ///
+        let checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.classList.add("checkbox");
+        liElem.appendChild(checkbox)
+/// lägger till en title ///
+        let title = document.createElement("span");
+        title.classList.add("title")
+        title.innerText = inputValue
+        liElem.appendChild(title)
+/// lägger till en kategori ///
+        let categorytxt = document.createElement("span");
+        categorytxt.classList.add("description");
+        categorytxt.innerText = "Kategori: " + inputValue2;
+        liElem.appendChild(categorytxt)
+/// lägger till tid och datum ///
+        let timeStamp = document.createElement("span");
+        timeStamp.classList.add("timeStamp")
+        liElem.appendChild(timeStamp)
+        timeStamp.innerHTML = "<strong>Uppgift skapad:</strong> <br> " + dateTime();
 
 
 
     
-}
+/// om checkbox är checkad blir utgångn följande ///
+         checkbox.addEventListener("change",() =>{
 
+            if(checkbox.checked){
+                title.classList.toggle("checked");
+                categorytxt.classList.toggle("checked");
+
+                timeStamp.innerHTML = "<strong>Uppgift slutförd:</strong> <br>" + dateTime()
+                bool !== true
+                title.innerText = "Färdig:  " + inputValue
+                ulDone.appendChild(liElem)
+
+            }else{
+                title.classList.toggle("checked");
+                categorytxt.classList.toggle("checked");
+        timeStamp.innerHTML = "<strong>Uppgift skapad:</strong> <br> " + dateTime();
+                bool == true
+                title.innerText = inputValue
+                ulDo.appendChild(liElem)
+
+            }
+        });
+
+
+
+        let deleteLi = document.createElement("span");// raderar LIelement
+        deleteLi.classList.add("delete")
+        deleteLi.innerText = "  🗑️";
+        liElem.appendChild(deleteLi);
+
+
+        deleteLi.addEventListener("click", onClick, false)
+
+        function onClick() {
+            liElem.remove();
+        }
+
+    }
+    
+        function dateTime() {
+            const now = new Date()
+            let day = now.getDate().toString();
+            let month = now.getMonth() + 1;
+            let month2 = month.toString();
+            let year = now.getFullYear();
+            let currentDate = `${day}-${month2}-${year}`;
+
+            const hoursAndMinutes = now.getHours() + ':' + now.getMinutes().toString();
+
+            return "Datum: " + currentDate + " Tid: " + hoursAndMinutes;
+        }
+        inputValue = "";
+        inputValue2= "";
+    }
 
 

@@ -1,37 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <input type="text" placeholder="Enter new to-do">
-  <p><input type="text" placeholder="Enter category" list="categoryList"></p>
-  <datalist id="categoryList">
-    <option value="Personal"></option>
-    <option value="Work"></option>
-  </datalist>
-  <button id="addBtn">Add</button>
-  <ul></ul>
-  <table id="todoTable">
-    <tr>
-      <td id="date">date</td>
 
-      <td>checkbox</td>
-      
-      <td>to-do</td>
-      <td><select  id="categoryFilter">
+    <header class="header">
+        <div class="col1">
+    <label for="input" class="label">Skriv en ToDo</label>
+        <input type="text" class="input" id="input" placeholder="Skriv en To-do" value="" required>
+    </div>
+    <div class="col2">
+        <label for="category" class="label">Lägg till kategori</label>
+        <input type="text" class="input" id="category" placeholder="Skriv en kategori" value=""required>
+    </div>
+    <div class="col3">
+        <button type="submit" id="addBtn">Lägg till</button>
+    </div>
+    </header>
+    <main class="container">
 
-     
+        <div class="maincol1">
+        <h2>Att Göra</h2>
+        <ul id="todoUL">
+ 
+                
+        </ul>
+    </div>
+    <div class="maincol2">
+        <h2>Färdig</h2>
+        <ul id="done">
 
-      </select></td>
-      <td>delete</td>
-    </tr>
-  </table>
- <script src="main.js"></script>
+        </ul>
+    </div>
+
+
+    </main>
+    <script src="todo.js"></script>
 </body>
+
 </html>
