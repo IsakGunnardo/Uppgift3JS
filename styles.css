@@ -13,6 +13,7 @@ body {
     background-size: cover;
 
     height: 100vh fit-content;
+    background-color: lightgray;
 
 }
 
@@ -22,7 +23,7 @@ body {
     display: grid;
     grid-template-columns: 2, 1, 1, 1, 2;
     grid-template-rows: 1, 1;
-    background: linear-gradient(green,yellow,red, orange );
+    background: linear-gradient(green, yellow, red);
     width: 100%;
     height: fit-content;
     justify-content: center;
@@ -38,19 +39,20 @@ body {
     font-family: Marker Felt, fantasy;
 }
 
-.top{
+.top {
     font-family: Marker Felt, fantasy;
     font-size: 40px;
     z-index: 1;
     display: grid;
     grid-row-start: 1;
     grid-column-start: 1;
-    grid-column-end: 5  ;
+    grid-column-end: 5;
 
     justify-content: center;
     text-align: center;
 
 }
+
 .col1 {
 
     display: grid;
@@ -89,8 +91,10 @@ body {
     margin: 10px;
     border-radius: 20px;
     text-align: center;
+    font-family: Marker Felt, fantasy;
 }
-.input:hover{
+
+.input:hover {
     background-color: whitesmoke;
 }
 
@@ -99,7 +103,9 @@ body {
     border-radius: 100px;
     width: 80px;
     height: 80px;
-    box-shadow: 0px 0px 5px 2px ;
+    box-shadow: 0px 0px 5px 2px;
+    font-weight: 900;
+    font-family: Marker Felt, fantasy;
 }
 
 .container {
@@ -121,13 +127,13 @@ h2 {
     margin: 10px;
     text-align: center;
 
-    border: 1px solid black ;
+    border: 1px solid black;
 
     height: 35px;
 }
 
 .maincol1 {
-    background-color: whitesmoke;
+    background-color: lightgray;
     display: grid;
     width: 500px;
     grid-column-start: 1;
@@ -141,12 +147,12 @@ h2 {
 
 }
 
-.maincol1 > h2{
-    background: linear-gradient(green, yellow);
+.maincol1>h2 {
+    background: linear-gradient(wheat,white);
 }
 
 .maincol2 {
-    background-color: whitesmoke;
+    background-color: lightgray;
 
     display: grid;
     width: 500px;
@@ -156,8 +162,8 @@ h2 {
     text-align: center;
 }
 
-.maincol2 > h2{
-    background: linear-gradient(red,orange);
+.maincol2>h2 {
+    background: linear-gradient(grey, white);
 }
 
 #todoUL {
@@ -187,7 +193,9 @@ h2 {
     justify-content: space-between;
     padding: 3px;
 }
-
+.liElem:hover{
+    background-color: whitesmoke;
+}
 .title {
     font-weight: 900;
 }
@@ -197,9 +205,12 @@ h2 {
     font-size: 15px;
     margin-top: 5px;
 }
-.checkedcolor{
+
+.checkedcolor {
     background-color: grey;
 }
+
+
 .checked {
 
     text-decoration: line-through 3px black;
@@ -220,26 +231,30 @@ h2 {
 
 
 @media screen and (max-width: 600px) {
-    .header{
+    .header {
         display: flex;
         align-items: center;
         text-align: center;
         flex-wrap: wrap;
         height: fit-content;
-        
+
 
     }
-    .col1{
+
+    .col1 {
         width: 500px;
     }
-    .col2{
+
+    .col2 {
         width: 600px;
     }
-    #addBtn{
+
+    #addBtn {
         width: 80px;
         height: 40px;
     }
-    .container{
+
+    .container {
 
         display: flex;
         flex-wrap: wrap;
@@ -249,4 +264,3 @@ h2 {
     }
 
 }
-  

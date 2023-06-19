@@ -3,43 +3,38 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="/x-icon /todoimg.png">
+
 </head>
 
 <body>
 
     <header class="header">
-      <h1 class="top">To-Do Lista</h1>
+        <h1 class="top">To-Do Lista</h1>
         <div class="col1">
-    <label for="input" class="label">Skriv en ToDo</label>
-        <input type="text" class="input" id="input" placeholder="Skriv en To-do" value="" required>
-    </div>
-    <div class="col2">
-        <label for="category" class="label">Lägg till kategori</label>
-        <input type="text" class="input" id="category" placeholder="Skriv en kategori" value=""required>
-    </div>
-    <div class="col3">
-        <button type="submit" id="addBtn">Lägg till</button>
-    </div>
+            <label for="input" class="label">Skriv en ToDo</label>
+            <input type="text" class="input" id="input" placeholder="Skriv en To-do" value="" required>
+        </div>
+        <div class="col2">
+            <label for="category" class="label">Lägg till kategori</label>
+            <input type="text" class="input" id="category" placeholder="Skriv en kategori" value="" required>
+        </div>
+        <div class="col3">
+            <button type="submit" id="addBtn">Lägg till</button>
+        </div>
     </header>
     <main class="container">
-
         <div class="maincol1">
-        <h2>Att Göra</h2>
-        <ul id="todoUL">
- 
-                
-        </ul>
-    </div>
-    <div class="maincol2">
-        <h2>Färdig</h2>
-        <ul id="done">
-
-        </ul>
-    </div>
-
-
+            <h2>Att Göra</h2>
+            <ul id="todoUL"></ul>
+        </div>
+        <div class="maincol2">
+            <h2>Färdig</h2>
+            <ul id="done"></ul>
+        </div>
     </main>
     <script src="main.js"></script>
 </body>
